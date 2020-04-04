@@ -17,6 +17,7 @@
     <h1>jsonlook</h1>
 
     <button onclick="prettyPrint()">Pretty Print</button>
+    <button onclick="removeWhiteSpace()">Remove Whitespace</button>
     <br>
     <textarea cols="150" rows="40" id="jsonblob" placeholder="paste json here..."></textarea>
     
@@ -30,6 +31,11 @@
       var obj = JSON.parse(ugly.replace(/'/g, '"'));
       var pretty = JSON.stringify(obj, undefined, 2);
       document.getElementById('jsonblob').value = pretty;
+    }
+    function removeWhiteSpace() {
+      var variableWithJsonWhitespace = document.getElementById('jsonblob').value;
+      var obj = JSON.stringify(JSON.parse(variableWithJsonWhitespace));
+      document.getElementById('jsonblob').value = obj;
     }
   </script>
 </html>
