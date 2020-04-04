@@ -24,30 +24,11 @@
     <br>
     <textarea cols="150" rows="40" id="jsonblob" placeholder="put your json here..."></textarea>
     
-
+    <p>Why did I build this, you may ask?</p>
+    <p>Simply put, I was tired of sketchy json viewers online. I wanted something that does its job with obfuscating what its doing with your data.</p>
+    <p>If you know basic javascript, you can read all the code we use.</p>
 
   </body>
 
-  <script>
-    function prettyPrint() {
-      var ugly = document.getElementById('jsonblob').value;
-      var obj = JSON.parse(ugly.replace(/'/g, '"'));
-      var pretty = JSON.stringify(obj, undefined, 2);
-      document.getElementById('jsonblob').value = pretty;
-    };
-    function removeWhiteSpace() {
-      var variableWithJsonWhitespace = document.getElementById('jsonblob').value;
-      var obj = JSON.stringify(JSON.parse(variableWithJsonWhitespace));
-      document.getElementById('jsonblob').value = obj;
-    };
-    function clearArea() {
-      document.getElementById('jsonblob').value = "";
-    };
-    function copyContent() {
-      var jsonValue = document.getElementById('jsonblob');
-      jsonValue.select();
-      jsonValue.setSelectionRange(0, 99999); /*For mobile devices*/
-      document.execCommand("copy");
-    };
-  </script>
+  <script src="./utilities.js"></script>
 </html>
