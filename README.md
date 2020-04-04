@@ -1,24 +1,5 @@
 # jsonlook
 
-## Project setup
-```
-yarn install
-```
+A simple json formatter that doesnt try to do anything shady. 
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Should work locally *AND* offline. 
