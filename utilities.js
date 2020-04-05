@@ -3,7 +3,12 @@ function getContentElement() {
 };
 function prettyPrint() {
     var ugly = getContentElement().value;
-    var obj = JSON.parse(ugly.replace(/'/g, '"'));
+    try{
+        var obj = JSON.parse(ugly.replace(/'/g, '"'));
+    } catch(e) {
+        alert(e);
+        return
+    }
     var pretty = JSON.stringify(obj, undefined, 2);
     getContentElement().value = pretty;
 };
