@@ -1,20 +1,23 @@
+function getContentElement() {
+    return document.getElementById('jsonContent')
+};
 function prettyPrint() {
-    var ugly = document.getElementById('jsonblob').value;
+    var ugly = getContentElement().value;
     var obj = JSON.parse(ugly.replace(/'/g, '"'));
     var pretty = JSON.stringify(obj, undefined, 2);
-    document.getElementById('jsonblob').value = pretty;
+    getContentElement().value = pretty;
 };
 function removeWhiteSpace() {
-    var variableWithJsonWhitespace = document.getElementById('jsonblob').value;
+    var variableWithJsonWhitespace = getContentElement().value;
     var obj = JSON.stringify(JSON.parse(variableWithJsonWhitespace));
-    document.getElementById('jsonblob').value = obj;
+    getContentElement().value = obj;
 };
-function clearArea() {
-    document.getElementById('jsonblob').value = "";
+function clearContent() {
+     getContentElement().value = "";
 };
 function copyContent() {
-    var jsonValue = document.getElementById('jsonblob');
-    jsonValue.select();
-    jsonValue.setSelectionRange(0, 99999); /*For mobile devices*/
+    var content = getContentElement();
+    content.select();
+    content.setSelectionRange(0, 99999); /*For mobile devices*/
     document.execCommand("copy");
 };
